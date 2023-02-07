@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    data = "ABOUT PAGE"
-    return render_template("index.html")
+    page_name = "MAIN PAGE"
+    return render_template("index.html", page_name=page_name)
 
 
 if __name__ == '__main__':
