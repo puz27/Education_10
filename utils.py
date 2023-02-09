@@ -21,11 +21,7 @@ def get_all(candidates: list) -> list:
     :param candidates: list with candidates
     :return: list
     """
-    needed_candidates = dict()
-    #needed_candidates = []
-    for candidate in candidates:
-        print(candidate['name'], candidate['position'], candidate['skills'])
-
+    return candidates
 
 
 def get_by_pk(pk: int, candidates: list) -> str:
@@ -57,5 +53,3 @@ def get_by_skill(skill_name: str, candidates: list) -> list:
 
 data_of_candidats = load_candidates("candidates.json")
 print(get_all(data_of_candidats))
-#print(get_by_pk(2, data_of_candidats))
-# print(get_by_skill("Python", data_of_candidats))

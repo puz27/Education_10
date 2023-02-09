@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{page_name}}{% endblock %}
+{% block title %}{{page_title}}{% endblock %}
 {% block body %}
-{{page_name}}
+{{page_information}}
+<ul>
+{%for candidate in candidates%}
+    <li>Имя кандидата:{{candidate["name"]}}</li>
+    <li>Позиция кандидата: {{candidate["position"]}}</li>
+    <li>Навыки: {{candidate["skills"]}}</li>
+    <br>
+{%endfor%}
+</ul>
+
 {% endblock %}
 

@@ -1,11 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from utils import *
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    page_name = "MAIN PAGE"
-    return render_template("index.html", page_name=page_name)
+    if request.method == 'GET':
+        page_title = "MAIN"
+        page_information = "INFORMATION ABOUT CANDIDATES"
+        candidates = get_all(data_of_candidats)
+        return render_template("index.html", page_title=page_title, page_information=page_information, candidates=candidates)
 
 
 if __name__ == '__main__':
